@@ -1,47 +1,56 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-02-03 13:28:11.151731",
+ "autoname": "TRGPLN-{YY}{MM}-{###}",
+ "creation": "2023-02-15 11:33:09.905685",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "no_of_lockers",
-  "start_time",
-  "end_time"
+  "training_plan_name",
+  "trainer",
+  "training_detail"
  ],
  "fields": [
   {
-   "fieldname": "no_of_lockers",
+   "fieldname": "training_plan_name",
    "fieldtype": "Data",
-   "label": "No of Lockers"
+   "in_list_view": 1,
+   "label": "Training Plan Name",
+   "reqd": 1
   },
   {
-   "fieldname": "start_time",
-   "fieldtype": "Time",
-   "label": "Start Time"
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Trainer",
+   "options": "Gym Trainer",
+   "reqd": 1
   },
   {
-   "fieldname": "end_time",
-   "fieldtype": "Time",
-   "label": "End Time"
+   "fieldname": "training_detail",
+   "fieldtype": "Table",
+   "label": "Training Detail",
+   "options": "Gym Training Plan Detail",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "issingle": 1,
  "links": [],
- "modified": "2023-02-15 14:32:33.766444",
+ "modified": "2023-02-15 14:14:33.241591",
  "modified_by": "Administrator",
  "module": "Gym Management",
- "name": "Gym Locker Details",
+ "name": "Gym Training Plan",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
+   "export": 1,
    "print": 1,
    "read": 1,
+   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1
@@ -50,23 +59,31 @@
    "create": 1,
    "delete": 1,
    "email": 1,
+   "export": 1,
    "print": 1,
    "read": 1,
+   "report": 1,
    "role": "Gym Admin",
    "share": 1,
    "write": 1
   },
   {
+   "create": 1,
    "email": 1,
+   "export": 1,
    "print": 1,
    "read": 1,
+   "report": 1,
    "role": "Gym Trainer",
-   "share": 1
+   "share": 1,
+   "write": 1
   },
   {
    "email": 1,
+   "export": 1,
    "print": 1,
    "read": 1,
+   "report": 1,
    "role": "Gym Member",
    "share": 1
   }

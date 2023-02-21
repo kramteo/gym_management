@@ -1,4 +1,5 @@
 {
+ "cards_label": "Gym Management",
  "category": "Modules",
  "charts": [],
  "creation": "2023-02-01 10:32:33.053435",
@@ -48,9 +49,45 @@
    "link_type": "Page",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gym Trainer",
+   "link_to": "Gym Trainer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gym Training Plan",
+   "link_to": "Gym Training Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gym Training Plan Enrollment",
+   "link_to": "Gym Training Plan Enrollment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gym Trainer Rating",
+   "link_to": "Gym Trainer Rating",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-02-13 15:16:53.589741",
+ "modified": "2023-02-15 13:21:03.010572",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Workspace",

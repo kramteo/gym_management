@@ -1,77 +1,61 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:LKR-{YY}{MM}-{###}",
- "creation": "2023-02-03 13:17:36.067353",
+ "autoname": "format:TNR-RTG-{YY}{MM}-{###}",
+ "creation": "2023-02-15 12:06:43.328068",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "membership_no",
-  "date_of_booking",
-  "start_time",
-  "no_of_hours",
-  "end_time",
-  "route",
-  "is_published"
+  "gym_member",
+  "gym_trainer",
+  "rating",
+  "date_of_rating"
  ],
  "fields": [
   {
-   "fieldname": "membership_no",
+   "fieldname": "gym_member",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Membership No",
+   "label": "Gym Member",
    "options": "Gym Member",
    "reqd": 1
   },
   {
-   "fieldname": "date_of_booking",
-   "fieldtype": "Date",
+   "fieldname": "gym_trainer",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Date of Booking",
+   "label": "Gym Trainer",
+   "options": "Gym Trainer",
    "reqd": 1
   },
   {
-   "fieldname": "start_time",
-   "fieldtype": "Time",
-   "in_list_view": 1,
-   "label": "Start Time",
-   "reqd": 1
-  },
-  {
-   "fieldname": "no_of_hours",
+   "fieldname": "rating",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "No of Hours",
-   "options": "1\n2\n3\n4\n5\n6\n7\n8",
+   "label": "Rating",
+   "options": "1. Excellent\n2. Very Good\n3. Good\n4. Average\n5. Poor",
    "reqd": 1
   },
   {
-   "fieldname": "end_time",
-   "fieldtype": "Time",
-   "label": "End Time",
-   "read_only": 1
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "Route"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_published",
-   "fieldtype": "Check",
-   "label": "Is Published"
+   "fieldname": "date_of_rating",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Rating",
+   "reqd": 1
   }
  ],
- "has_web_view": 1,
  "index_web_pages_for_search": 1,
- "is_published_field": "is_published",
- "links": [],
- "modified": "2023-02-15 14:31:35.830733",
+ "links": [
+  {
+   "link_doctype": "Gym Member",
+   "link_fieldname": "name"
+  }
+ ],
+ "modified": "2023-02-17 16:18:43.880010",
  "modified_by": "Administrator",
  "module": "Gym Management",
- "name": "Gym Locker Booking",
+ "name": "Gym Trainer Rating",
  "owner": "Administrator",
  "permissions": [
   {
@@ -119,7 +103,6 @@
    "write": 1
   }
  ],
- "route": "gym_management/gym_locker_booking",
  "sort_field": "modified",
  "sort_order": "DESC"
 }
