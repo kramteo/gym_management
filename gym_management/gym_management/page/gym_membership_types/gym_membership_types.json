@@ -4,7 +4,7 @@
  "docstatus": 0,
  "doctype": "Page",
  "idx": 0,
- "modified": "2023-02-16 13:38:43.229514",
+ "modified": "2023-02-21 19:07:30.725395",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "gym-membership-types",
@@ -22,6 +22,9 @@
   },
   {
    "role": "Gym Member"
+  },
+  {
+   "role": "Guest"
   }
  ],
  "script": null,

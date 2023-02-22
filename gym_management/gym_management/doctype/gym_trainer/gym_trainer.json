@@ -11,7 +11,6 @@
   "grading",
   "no_of_grading",
   "date_joined",
-  "years_of_experience",
   "column_break_uxwic",
   "picture"
  ],
@@ -42,12 +41,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "years_of_experience",
-   "fieldtype": "Int",
-   "label": "Years of Experience",
-   "read_only": 1
-  },
-  {
    "fieldname": "column_break_uxwic",
    "fieldtype": "Column Break"
   },
@@ -55,12 +48,14 @@
    "columns": 1,
    "fieldname": "picture",
    "fieldtype": "Attach Image",
-   "label": "Picture"
+   "label": "Picture",
+   "reqd": 1
   }
  ],
+ "image_field": "picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-16 17:11:01.284547",
+ "modified": "2023-02-21 19:25:37.231594",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer",
