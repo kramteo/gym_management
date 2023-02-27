@@ -10,7 +10,6 @@
   "membership_type",
   "annual_price",
   "free_access_hours",
-  "amended_from",
   "excess_hours_charging_rate"
  ],
  "fields": [
@@ -31,15 +30,6 @@
    "label": "Free Access Hours (Monthly)"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Membership",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "excess_hours_charging_rate",
    "fieldtype": "Currency",
    "label": "Excess Hours Charging Rate"
@@ -47,7 +37,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-16 13:36:20.876429",
+ "modified": "2023-02-27 13:37:43.517827",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Membership",
@@ -93,6 +83,16 @@
    "read": 1,
    "report": 1,
    "role": "Gym Member",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
    "share": 1
   }
  ],

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "PLNENR-{YY}{MM}-{###}",
+ "autoname": "format:PLNENR-{YY}{MM}-{###}",
  "creation": "2023-02-15 11:55:11.298042",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -37,7 +37,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-15 14:16:11.245097",
+ "modified": "2023-02-22 14:21:02.996393",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Training Plan Enrollment",

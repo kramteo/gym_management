@@ -85,9 +85,18 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gym Health Record",
+   "link_to": "Gym Member Health Record",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-02-15 13:21:03.010572",
+ "modified": "2023-02-22 15:12:48.060311",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Workspace",

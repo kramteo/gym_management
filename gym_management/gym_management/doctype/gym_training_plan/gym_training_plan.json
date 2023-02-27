@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "TRGPLN-{YY}{MM}-{###}",
+ "autoname": "format:TRGPLN-{YY}{MM}-{###}",
  "creation": "2023-02-15 11:33:09.905685",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -37,7 +37,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-15 14:14:33.241591",
+ "modified": "2023-02-22 14:03:58.089142",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Training Plan",

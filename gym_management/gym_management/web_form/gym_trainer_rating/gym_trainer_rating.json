@@ -21,7 +21,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2023-02-22 12:03:24.722571",
+ "modified": "2023-02-23 13:16:34.298211",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "gym-trainer-rating",
@@ -39,7 +39,7 @@
  "title": "Gym Trainer Rating",
  "web_form_fields": [
   {
-   "allow_read_on_all_link_options": 0,
+   "allow_read_on_all_link_options": 1,
    "fieldname": "gym_member",
    "fieldtype": "Link",
    "hidden": 0,
@@ -52,7 +52,7 @@
    "show_in_filter": 0
   },
   {
-   "allow_read_on_all_link_options": 0,
+   "allow_read_on_all_link_options": 1,
    "fieldname": "gym_trainer",
    "fieldtype": "Link",
    "hidden": 0,
