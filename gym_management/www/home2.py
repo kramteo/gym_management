@@ -10,11 +10,18 @@ from frappe import _
 no_cache = 1
 
 def get_context(context):
-    data_list = frappe.db.get_list('Gym Membership', 
-		fields= ['membership_type', 'annual_price', 'free_access_hours', 'excess_hours_charging_rate'], 
-		as_list=True
-	)
+
+    # Use get_all to bypass permission checks
+    data_list = frappe.db.get_all('Gym Membership', 
+      fields= ['membership_type', 'annual_price', 'free_access_hours', 'excess_hours_charging_rate'], 
+      as_list=True
+	  )
     context.data = list(data_list)
+    frappe.msgprint(
+      msg='This file does not exist',
+      title='Error',
+      raise_exception=FileNotFoundError
+    )
     # i = 0
     # data = []
     # for data1 in data_list:
