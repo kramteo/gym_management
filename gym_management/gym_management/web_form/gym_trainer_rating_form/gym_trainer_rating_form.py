@@ -16,6 +16,9 @@ def check_picture(gym_trainer):
 	check_exist = frappe.db.exists('Gym Trainer', gym_trainer)
 	if (check_exist != None) :
 		picture = frappe.db.get_value('Gym Trainer', check_exist, 'picture')
+	else:
+		picture = "Not Found!"
+	# print_msg("Test")
 	# frappe.msgprint(check_exist + ' test')
 	return picture
 
@@ -37,7 +40,7 @@ def check_rating(gym_trainer):
 		overall_rating = trainer_rating / rating_count
 		frappe.db.set_value('Gym Trainer', gym_trainer, 'grading', overall_rating)
 		frappe.db.set_value('Gym Trainer', gym_trainer, 'no_of_grading', rating_count)
-	frappe.msgprint(str(overall_rating) + ' , ' + str(rating_count))
+	# frappe.msgprint(str(overall_rating) + ' , ' + str(rating_count))
 	
 
 def determine_rating(rating):
