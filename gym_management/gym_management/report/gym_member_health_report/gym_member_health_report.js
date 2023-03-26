@@ -4,33 +4,33 @@
 
 frappe.query_reports["Gym Member Health Report"] = {
 	"filters": [
-		{
-			fieldname: "tree_type",
-			label: __("Tree Type"),
-			fieldtype: "Select",
-			options: ["Customer Group", "Customer", "Item Group", "Item", "Territory", "Order Type", "Project"],
-			default: "Customer",
-			reqd: 1
-		},
-		{
-			fieldname: "doc_type",
-			label: __("based_on"),
-			fieldtype: "Select",
-			options: ["Sales Order","Delivery Note","Sales Invoice"],
-			default: "Sales Invoice",
-			reqd: 1
-		},
-		{
-			fieldname: "value_quantity",
-			label: __("Value Or Qty"),
-			fieldtype: "Select",
-			options: [
-				{ "value": "Value", "label": __("Value") },
-				{ "value": "Quantity", "label": __("Quantity") },
-			],
-			default: "Value",
-			reqd: 1
-		},
+		// {
+		// 	fieldname: "tree_type",
+		// 	label: __("Tree Type"),
+		// 	fieldtype: "Select",
+		// 	options: ["Customer Group", "Customer", "Item Group", "Item", "Territory", "Order Type", "Project"],
+		// 	default: "Customer",
+		// 	reqd: 1
+		// },
+		// {
+		// 	fieldname: "doc_type",
+		// 	label: __("based_on"),
+		// 	fieldtype: "Select",
+		// 	options: ["Sales Order","Delivery Note","Sales Invoice"],
+		// 	default: "Sales Invoice",
+		// 	reqd: 1
+		// },
+		// {
+		// 	fieldname: "value_quantity",
+		// 	label: __("Value Or Qty"),
+		// 	fieldtype: "Select",
+		// 	options: [
+		// 		{ "value": "Value", "label": __("Value") },
+		// 		{ "value": "Quantity", "label": __("Quantity") },
+		// 	],
+		// 	default: "Value",
+		// 	reqd: 1
+		// },
 		{
 			fieldname: "from_date",
 			label: __("From Date"),
@@ -68,7 +68,7 @@ frappe.query_reports["Gym Member Health Report"] = {
 			events: {
 				onCheckRow: function (data) {
 
-					// console.log(data)
+					console.log(data)
 					
 					// if (!data) return;
 					const data_doctype = "doctype"
@@ -94,7 +94,7 @@ frappe.query_reports["Gym Member Health Report"] = {
 					// 		});
 					// } else {
 					row_values = data
-						.slice(3, length )
+						.slice(4, length )
 						.map(function (column) {
 							return column.content;
 						});
@@ -107,32 +107,33 @@ frappe.query_reports["Gym Member Health Report"] = {
 					};
 					console.log(entry)
 
-					// let raw_data = frappe.query_report.chart.data;
-					// let new_datasets = raw_data.datasets;
+					let raw_data = frappe.query_report.chart.data;
+					console.log(raw_data)
+					let new_datasets = raw_data.datasets;
 
-					// let element_found = new_datasets.some((element, index, array)=>{
-					// 	if(element.name == row_name){
-					// 		array.splice(index, 1)
-					// 		return true
-					// 	}
-					// 	return false
-					// })
+					let element_found = new_datasets.some((element, index, array)=>{
+						if(element.name == row_name){
+							array.splice(index, 1)
+							return true
+						}
+						return false
+					})
 
-					// if (!element_found) {
-					// 	new_datasets.push(entry);
-					// }
+					if (!element_found) {
+						new_datasets.push(entry);
+					}
 
-					// let new_data = {
-					// 	labels: raw_data.labels,
-					// 	datasets: new_datasets,
-					// };
-					// chart_options = {
-					// 	data: new_data,
-					// 	type: "line",
-					// };
-					// frappe.query_report.render_chart(chart_options);
+					let new_data = {
+						labels: raw_data.labels,
+						datasets: new_datasets,
+					};
+					chart_options = {
+						data: new_data,
+						type: "line",
+					};
+					frappe.query_report.render_chart(chart_options);
 
-					// frappe.query_report.raw_chart_data = new_data;
+					frappe.query_report.raw_chart_data = new_data;
 				},
 			},
 		});

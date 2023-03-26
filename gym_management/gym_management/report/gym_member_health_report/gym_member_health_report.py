@@ -55,7 +55,7 @@ class Analytics(object):
 	def run(self):
 		self.get_columns()
 		self.get_data()
-		# self.get_chart_data()
+		self.get_chart_data()
 
 		# Skipping total row for tree-view reports
 		skip_total_row = 1
@@ -64,7 +64,7 @@ class Analytics(object):
 		# 	skip_total_row = 1
 
 		# return self.columns, self.data, None, self.chart, None, skip_total_row
-		return self.columns, self.data
+		return self.columns, self.data, None, self.chart
 
 	def get_columns(self):
 		self.columns = [
@@ -241,16 +241,18 @@ class Analytics(object):
 	def get_chart_data(self):
 		length = len(self.columns)
 
-		if self.filters.tree_type in ["Customer", "Supplier"]:
-			labels = [d.get("label") for d in self.columns[2 : length - 1]]
-		elif self.filters.tree_type == "Item":
-			labels = [d.get("label") for d in self.columns[3 : length - 1]]
-		else:
-			labels = [d.get("label") for d in self.columns[1 : length - 1]]
+		# if self.filters.tree_type in ["Customer", "Supplier"]:
+		# 	labels = [d.get("label") for d in self.columns[2 : length - 1]]
+		# elif self.filters.tree_type == "Item":
+		# 	labels = [d.get("label") for d in self.columns[3 : length - 1]]
+		# else:
+		# 	labels = [d.get("label") for d in self.columns[1 : length - 1]]
+		labels = [d.get("label") for d in self.columns[2 : length - 1]]
 		self.chart = {"data": {"labels": labels, "datasets": []}, "type": "line"}
 
-		if self.filters["value_quantity"] == "Value":
-			self.chart["fieldtype"] = "Currency"
-		else:
-			self.chart["fieldtype"] = "Float"
+		# if self.filters["value_quantity"] == "Value":
+		# 	self.chart["fieldtype"] = "Currency"
+		# else:
+		# 	self.chart["fieldtype"] = "Float"
+		self.chart["fieldtype"] = "Float"
 
