@@ -15,14 +15,15 @@ def print_msg(test_arg):
 def show_table(trg_plan):
 	trg_plans = frappe.db.get_all('Gym Training Plan', 
 		filters= { 'name' : trg_plan},
-		fields= ['training_plan_name', 'trainer', 'name'], 
+		fields= ['training_plan_name', 'trainer', 'name', 'monthly_price'], 
 		as_list=True,
 	)
+	monthly_price = trg_plans[0][3]
     
-	trainer_list = {}
+	# trainer_list = {}
 	for record in trg_plans:
 		trainer = frappe.db.get_value('Gym Trainer', record[1], 'trainer_name')
-		trainer_list[record[1]] = trainer
+	trainer_list = trainer
 
 	# trg_det = {}
 	for record in trg_plans:
@@ -33,4 +34,4 @@ def show_table(trg_plan):
 		)
 		# trg_det[record[2]] = trg
 		trg_det = trg
-	return trg_plans, trainer_list, trg_det
+	return monthly_price, trainer_list, trg_det

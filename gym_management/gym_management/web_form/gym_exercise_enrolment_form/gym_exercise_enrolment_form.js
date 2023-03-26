@@ -36,6 +36,7 @@ frappe.ready(function() {
 		// 	{ name: "Monte Falco", height: 1658, place: "Parco Foreste Casentinesi" },
 		// ];
 		let table1 = document.createElement("table");
+		let label1 = document.createElement("label");
 		// let data = Object.keys(mountains[0]);
 		// generateTableHead(table1, data);
 		// find_ele = document.getElementById("page-gym-exercise-enrolment-form")
@@ -43,6 +44,7 @@ frappe.ready(function() {
 		// find_ele.append(table1)
 		// console.log("Test2")
 		// table1.style.border = "thick solid #0000FF"
+		find_ele.append(label1)
 		find_ele.append(table1)
 		
 		frappe.web_form.on('plan_enrolled', async () => {
@@ -57,12 +59,16 @@ frappe.ready(function() {
 					// code snippet
 					let r_msg = r.message
 					let data = r_msg[2]
-					console.log(data)
+					let label_text = r_msg[1]
+					let monthly_price = r_msg[0]
+					console.log(monthly_price)
+					label_text = "Course conducted by " + label_text + " at $" + monthly_price + " per month"
+					label1.innerHTML = label_text
 					rowCount=table1.rows.length
 					for (var i = 0; i < rowCount; i++) {
 						table1.deleteRow(0);
 					}
-					generateTableHead(table1, ["Exercise", "Description", "Start Time", "Duration (hr)", "Day"])
+					generateTableHead(table1, ["Exercise          ", "Description          ", "Start Time", "Duration (hr)", "Day"])
 					generateTable(table1, data)
 				}
 			})
