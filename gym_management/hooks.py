@@ -179,3 +179,7 @@ user_data_fields = [
 #	"gym_management.auth.validate"
 # ]
 
+# Fixtures
+# --------
+
+fixtures = ["Custom Field"]
